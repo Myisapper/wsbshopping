@@ -1,0 +1,31 @@
+server:
+  port: 8080
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 199603
+    url: jdbc:mysql://localhost:3306/wsbshopping?serverTimezone=GMT%2B8
+  application:
+    name: wsb-tb-item
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+
+mybatis:
+  mapper-locations: classpath:sql/*Mapper.xml
+  type-aliases-package: com.wsb.item.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    com.wsb.item.dao : debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka

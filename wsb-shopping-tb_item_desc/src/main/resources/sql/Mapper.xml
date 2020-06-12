@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsb.item.desc.mapper.ItemDescMapper">
+    <select id="findById" resultType="com.wsb.item.desc.pojo.ItemDesc">
+        select *from tb_item_desc where item_id = #{id}
+    </select>
+    <insert id="addItemDesc">
+        insert into tb_item_desc (item_id,item_desc,created,updated) value (#{itemId},#{itemDesc},#{created},#{updated})
+    </insert>
+
+    <delete id="deleteItemDescById">
+        delete from tb_item_desc where item_id = #{id}
+    </delete>
+    <update id="updateItemDescById">
+        update tb_item_desc set item_desc=#{itemDesc},created=#{created},updated=#{updated} where item_id=#{itemId}
+    </update>
+
+</mapper>
