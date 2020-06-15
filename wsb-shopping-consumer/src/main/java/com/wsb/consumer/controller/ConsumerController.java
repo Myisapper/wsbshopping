@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @EnableFeignClients//开启Feign客户端
+@CrossOrigin
 @RequestMapping("consumer")
 public class ConsumerController {
     @Autowired

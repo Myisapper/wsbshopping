@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("item/desc")
+@CrossOrigin
 public class ItemDescController {
     @Autowired
     private ItemDescService itemDescService;
